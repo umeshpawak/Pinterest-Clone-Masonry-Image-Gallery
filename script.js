@@ -7,11 +7,12 @@ var arr = [
     {name: "web design", image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
     {name: "apple juice", image: "https://images.unsplash.com/photo-1576673442511-7e39b6545c87?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
 
-]
+]  
+// this object arry we maded for clutter 
 
 function showTheCards(){
     var clutter = "";
-    arr.forEach(function(obj){
+    arr.forEach(function(obj){    // function is applied on each arr for img 
         clutter += `<div class="box">
         <img class="cursor-pointer" src="${obj.image}" alt="image">
         <div class="caption">Lorem ipsum </div>
@@ -22,7 +23,7 @@ function showTheCards(){
     .innerHTML = clutter;
 }
 
-function handleSearchFunctionality(){
+function handleSearchFunctionality(){        
     var input = document.querySelector("#searchinput");
     
 
@@ -37,7 +38,7 @@ function handleSearchFunctionality(){
     })
 
     input
-    .addEventListener("input", function(){
+    .addEventListener("input", function(){   // search bar me kuch bhi search kiya to releted context dikhane k liye 
         const filteredArray = arr.filter(obj => obj.name.toLowerCase().startsWith(input.value));
         var clutter = "";
         filteredArray.forEach(function(obj){
